@@ -1,0 +1,10 @@
+#include <cmath>
+
+
+exp(x) : e의 x지수제곱
+log(x) : log e의 로그 (log(x))
+log10(x) : log 10의 로그 (log10(x))
+sqrt(x) : x의 제곱근
+pow(x,2) : x의 2제곱
+floor(3.7) : 3.7보다 작은 정수값 반환
+abs(x) : x의 절대값 반환
