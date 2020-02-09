@@ -1,4 +1,4 @@
-String 
+#include <string>
 
 .to_string(num) : string으로 형변환
 .capacity() : 스트링 길이 변환
