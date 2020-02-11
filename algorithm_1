@@ -1,0 +1,62 @@
+#include <algorithm>
+
+max(x, y) : x와 y중 큰 값 리턴
+min(x, y) : x와 y중 작은 값 리턴
+swap(x, y) : x와 y를 바꿈
+swap_ranges(x, x+3, y) : 첫번째 시작구간점에서 첫 번째 구간의 끝점까지 두 번째 구간의 시작점과 바꿔라
+                        x에서 x+3까지의 크기를 y에서 그 크기만큼 바꿔라
+                        foo: 10 10 10 10 10
+                        bar: 33 33 33 33 33
+                        swap_ranges(foo.begin()+1, foo.end()-1, bar.begin()); // foo의 1에서 foo의 3까지 bar의 시작점과 바꿔라
+                        foo: 10 33 33 33 10
+                        bar: 10 10 10 33 33
+copy(x, x+3, y) : 첫번째 시작 구간점에서 첫 번째 구간의 끝점까지 두 번째 구간의 시작점에 복사
+                  위와 똑같음
+                  int myints[]={10,20,30,40,50,60,70};
+                  copy ( myints, myints+7, myvector.begin() ); //myints의 [0]에서 myints의 [6]까지 myvector의 시작점에 복사해라
+                  myvector contains: 10 20 30 40 50 60 70
+fill(x, x+3, y) : x에서 x+3만큼 y로 채워 넣는다
+                  vector<int> myvector (8); 
+                  fill (myvector.begin(),myvector.begin()+4,5); // myvector의 [0]에서 [3]까지 5로 채워넣는다
+                  myvector contains: 5 5 5 5 0 0 0 0
+reverse(x, y) : 시작점(x)에서 끝점(y)까지의 구간을 뒤집는다
+rotate(x, x+2, x+5) : 시작점(x) 끝점(x+2) 옮겨질 위치(x+5)
+                      myvector: 1 2 3 4 5 6 7 8 9
+                      rotate(myvector.begin(),myvector.begin()+3,myvector.end()); //myvector의 [0]에서 [2]까지 왼쪽으로 회전(1, 2, 3)은 옮겨질 위치 뒤에 
+                      myvector contains: 4 5 6 7 8 9 1 2 3
+random_shuffle(x, y) : x에서 y까지의 구간을 랜덤으로 섞기
+                       1 2 3 4 5 6 7 8 9
+                       random_shuffle ( myvector.begin(), myvector.end() );
+                       3 4 1 6 8 9 2 7 5
+sort(start, end) : 오름차순 정렬
+sort(v.begin(), v.end(), greater<자료형>()) : 내림차순 정렬
+sort(v.begin(), v.end(), less<자료형>()) : 오름차순 정렬
+for_each (begin(), end(), myfunction) : 시작점에서 끝점까지 함수를 사용하도록함(세 번째 변수 값은 void형 이여야 한다)
+                                                        void myfunction (int i) {  // function:
+                                                          std::cout << "\n" << i;
+                                                        }
+                                                        for_each (myvector.begin(), myvector.end(), myfunction);
+                                                        myvector contains: 10
+                                                                           20
+                                                                           30
+ transform(begin(), end(), begin(), op_increase) : 시작점에서 끝점까지를 결과를 지정할 범위의 시작점까지 함수사용(for_each와는 다르게 리턴 값 사용가능)
+                                                   int op_increase (int i) { return ++i; }
+                                                   foo: 10 20 30 40 50
+                                                   transform (foo.begin(), foo.end(), bar.begin(), op_increase);
+                                                   bar: 11 21 31 41 51
+                                                   
+                                                   매개변수가 2개인 함수도 적용 가능(매개 변수 갯수도 증가)
+                                                   int multiply(int m, int n){
+                                                   return m*n; }
+                                                   int a[5] = {1, 1, 2, 3, 5};
+                                                   int b[5] = {1, 2, 3, 4, 5};
+                                                   int c[5] = {0, 0, 0, 0, 0};
+                                                   transform(a, a+5, b, c, multiply);
+                                                   c: 1 2 6 12 25
+generate (begin(),end(), RandomNumber) : 시작점에서 끝점까지 함수 사용
+                                         int constant(){
+                                         return 8; }
+                                         generate(a, a+5, constant);
+                                         a: 8 8 8 8 8
+                                         
+                                                   
