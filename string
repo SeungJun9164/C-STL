@@ -1,5 +1,6 @@
 #include <string>
 
+.assign(갯수, 문자) : 문자를 갯수만큼 할당
 .to_string(num) : string으로 형변환
 .capacity() : 스트링 길이 변환
 .at(0) : 0번째 문자반환 (범위 검사를 하기 때문에 느림)
