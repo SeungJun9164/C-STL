@@ -1,5 +1,6 @@
 #include <string>
 
+.append("문자열") : 문자열을 뒤에 추가
 .assign(갯수, 문자) : 문자를 갯수만큼 할당
 .to_string(num) : string으로 형변환
 .capacity() : 스트링 길이 변환
