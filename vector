@@ -8,7 +8,6 @@ vector<int> v2(v1) : v2는 v1을 복사해서 생성
 연산자로 대소비교 가능
 
 v.assign(5, 2) : 2의 값으로 5개의 원소 할당
-----(만약 vector가 string형이면 v.assign()은 v.assign(new size, string)으로 계산된다. 따라서 v.assign(5, " ")이렇게 써야한다.)---
 v.at(idx) : idx번째 원소를 리턴 (v[idx]보다 느리지만, 범위를 점검해서 안전)
 v.front() : 첫번째 원소 리턴
 v.back() : 마지막 원소 리턴
