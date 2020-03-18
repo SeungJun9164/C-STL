@@ -11,7 +11,7 @@ a.compare(b) : a와 b비교 ( 같으면 0 / a가 b보다 사전적 앞에 있으
 .replace(시작, 길이, 대체문자열) : 시작에서 부터 길이 만큼 대체
 .insert(위치, 문자열) : 위치에 문자열 삽입
 stoi() : 정수형 변환
-.substr( , ) : 부분문자열 구하기
+.substr(시작위치,갯수) : 부분문자열 구하기
 toupper(str[i]) : str[i]를 대문자로 변경
 tolower(str[i]) : str[i]를 소문자로 변경
 .clear() : 스트링에 들어 있는 문자열을 지움(size와 length는 0이 되지만 capacity는 남아있음)
